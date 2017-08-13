@@ -6,27 +6,14 @@ distt = "C:\\Program Files (x86)\\Steam\\_found"
 path = os.getcwd()
 print(path)
 for root, dirs, files in os.walk(path):
-    #print(root)
-    #print(dirs)
-    #print(files)
     for file in files:
         if file.endswith((".jpg", ".png", ".jpeg")):
-            
-            #print(root)
-            #curpath = os.getcwd()
-            #print(curpath)
-            #print(root)
             folder = root.split("\\")[-1]
             fdist = distt+"\\"+folder
-            #print(folder)
             print(file)
             if not os.path.exists(fdist):
                 os.mkdir(fdist)
                 shutil.move(root+"\\"+file, fdist)
             else:
                 shutil.move(root+"\\"+file, fdist)
-            #shutil.move(root+"\\"+file, distt+"\\"+folder)
-            #shutil.move(
-
-
 print("Done!")
