@@ -3,6 +3,8 @@ import os, shutil
 
 os.chdir("C:\\Program Files (x86)\\Steam\\userdata")
 distt = "C:\\Program Files (x86)\\Steam\\_found" # Where you want the pictures
+if not os.path.exists(distt):
+    os.mkdir(distt)
 path = os.getcwd()
 print(path)
 for root, dirs, files in os.walk(path):
