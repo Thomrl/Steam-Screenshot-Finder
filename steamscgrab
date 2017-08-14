@@ -1,7 +1,7 @@
 #! python3.5
-import os, sys, shutil
+import os, shutil
 
-os.chdir("C:\\Program Files (x86)\\Steam\\userdata2") #userdata2 so I dont screw with anything in the original folder.
+os.chdir("C:\\Program Files (x86)\\Steam\\userdata")
 distt = "C:\\Program Files (x86)\\Steam\\_found"
 path = os.getcwd()
 print(path)
@@ -13,7 +13,5 @@ for root, dirs, files in os.walk(path):
             print(file)
             if not os.path.exists(fdist):
                 os.mkdir(fdist)
-                shutil.move(root+"\\"+file, fdist)
-            else:
-                shutil.move(root+"\\"+file, fdist)
+            shutil.copy(root+"\\"+file, fdist)
 print("Done!")
